@@ -1,0 +1,68 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="diegoPoint">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Node/Angular App</title>
+
+    <!-- CSSs -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css"> <!-- load leaflet css 0.7.1 -->
+    <link rel="stylesheet" href="css/libs/angular-leaflet-directive.css"> <!-- load leaflet css 0.7.1 -->
+
+
+   
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #point-list              { margin-bottom:30px; }
+    </style>
+
+    <!-- Scripts -->    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script> <!-- load angular 1.2.6 -->    
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script> <!-- load leaflet.js 0.7.1 -->
+    <script src="js/libs/angular-leaflet-directive.js"></script> <!-- load our main application -->
+    <script src="js/libs/leaflet.awesome-markers.js"></script>
+    <script src="js/controllers/main.js"></script> <!-- load up our controller -->
+    <script src="js/services/points.js"></script> <!-- load our point service -->
+    <script src="js/core.js"></script> <!-- load our main application -->
+
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL POINTS -->
+<body ng-controller="mainController">
+    <!-- HEADER AND POINT COUNT -->
+    <div class="jumbotron text-center">
+          <h1>Number of points: <span class="label label-info">{{ markers.length }}</span></h1>
+    </div>
+
+    <leaflet center="center"width="100%" height="480px" markers="markers" center="osloCenter"></leaflet>
+
+    <div class="container">                
+
+        <!-- FORM TO CREATE POINTS -->
+        <div id="point-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">			
+			latitude:
+			<input type="text" class="form-control input-lg text-center" placeholder="Latitude" ng-model="formData.latitude"><br>
+			longitude:
+			<input type="text" class="form-control input-lg text-center" placeholder="Longitude" ng-model="formData.longitude"><br>
+                    </div>
+
+                    <!-- createPoint() WILL CREATE NEW points -->
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createPoint()">Add</button>
+                </form>
+            </div>
+        </div>	
+
+    </div>
+
+</body>
+</html>

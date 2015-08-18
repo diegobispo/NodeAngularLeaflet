@@ -1,0 +1,14 @@
+{
+  "name"         : "node-todo",
+  "version"      : "0.0.0",
+  "description"  : "Simple todo application.",
+  "main"         : "server.js",
+  "author"       : "Diego Bispo",
+  "dependencies" : {
+    "express"    : "*",
+    "mongoose"   : "*",
+    "morgan"     : "*",
+    "body-parser": "*",
+    "method-override": "*"
+    }
+}

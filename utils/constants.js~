@@ -1,0 +1,98 @@
+/**
+ * Define constants
+ *
+ * @method define
+ * @param {String} name constant name
+ * @param {String || Number} value constant value
+ */
+
+function define(name, value) {
+    Object.defineProperty(exports, name, {
+        value: value,
+        enumerable: true
+    });
+}
+
+//---------------------------------------------------------------------
+// Avaible display for client
+//---------------------------------------------------------------------
+define('JULIA_LANGUAGE', 'Julia');
+define('PYTHON_LANGUAGE', 'Python');
+define('R_LANGUAGE', 'R');
+
+
+//---------------------------------------------------------------------
+// AWS S3 Access fields
+//---------------------------------------------------------------------
+define('MAX_WEIGHT_S3_FILE', 2147483648);
+define('BUCKET_NAME', 'aedev-tmp');
+define('AWS_ACCESS_KEY', 'AKIAIG4FDPCRAAQXT7PQ');
+define('AWS_SECRET_KEY', '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');
+
+//---------------------------------------------------------------------
+// Github Connection
+//---------------------------------------------------------------------
+define('REPO_GITHUB', 'babel');
+define('USER_GITHUB', 'aentropico');
+define('USER_GITHUB_TOKEN', 'aedev')
+define('TOKEN_GITHUB_ALT', 'f121538d9795c2db47b974c9bd56b98b138c04dc');
+
+
+//---------------------------------------------------------------------
+// HTTP Status
+//---------------------------------------------------------------------
+define('SERVER_PORT', 8003);
+define('OK_CODE', 200);
+define('ACCEPTED_CODE', 202);
+define('FORBIDDEN_ERROR_CODE', 403);
+define('NOTFOUND_ERROR_CODE', 404);
+define('DATABASE_ERROR_CODE', 500);
+define('INTERNAL_ERROR_CODE', 500);
+
+
+//---------------------------------------------------------------------
+// Error things
+//---------------------------------------------------------------------
+define('DATABASE_ERROR_TITLE', 'Database Error');
+define('DATABASE_ERROR_MESSAGE', "Sorry but we have problems on database");
+
+//---------------------------------------------------------------------
+// HTTP Status
+//---------------------------------------------------------------------
+define('URI_MONGODB', process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://127.0.0.1:27017/test')
+
+
+//---------------------------------------------------------------------
+// SOURCE | DESTINY
+//---------------------------------------------------------------------
+define('BINARY', 'bin');
+define('S3', 's3');
+define('DROPBOX', 'dropbox');
+define('S3_AENTROPICO', 's3-aentropico');
+
+//---------------------------------------------------------------------
+// IMG MEDIA TYPE
+//---------------------------------------------------------------------
+define('IMAGE_MEDIA_TYPE', 'image');
+define('PNG_TYPE', 'png');
+define('JPEG_TYPE', 'jpeg');
+define('GIF_TYPE', 'gif');
+
+define('TEXT_MEDIA_TYPE', 'text');
+define('APPLICATION_MEDIA_TYPE', 'application');
+
+
+//---------------------------------------------------------------------
+// GIT STANDARD
+//---------------------------------------------------------------------
+
+define('DALI', 'dali/');
+define('DALI_SOURCE', 'src/src');
+
+
+
+//---------------------------------------------------------------------
+// Errors
+//---------------------------------------------------------------------
+define('STADISTICAL_LANGUAGE_ERROR_TITLE', 'Stadistical language problem')
+define('STADISTICAL_LANGUAGE_ERROR_MESSAGE', 'The script or the server that interprets the stadistical language is down')
